@@ -5,34 +5,43 @@
 Classes e suas funções:
 
 1.	AdmTariffConstants:
+   
     •	Classe de constantes que define os módulos regulatórios e contábeis;
 
-2.	AdmTariffController:
+3.	AdmTariffController:
+   
     •	Controla as solicitações HTTP relacionadas a tarifas;
     •	Oferece endpoints para criar, listar, buscar e excluir tarifas;
     •	Trata conversão de DTO para entidade;
     •	Lida com exceções e retorna respostas HTTP apropriadas.
 
-3.	AdmTariffDTO:
+5.	AdmTariffDTO:
+   
     •	Representa o objeto de transferência de dados (DTO) para tarifas;
     •	Contém informações sobre módulo, data e listas de tabelas, registros adicionais e condições especiais;
 
-4.	AdmTariffTableDTO, AdmAdditionalRecordDTO, AdmSpecialConditionDTO:
+7.	AdmTariffTableDTO, AdmAdditionalRecordDTO, AdmSpecialConditionDTO:
+   
     •	DTOs para tabelas, registros adicionais e condições especiais, respectivamente;
     •	Contêm informações relevantes para cada tipo de tarifa.
 
-5.	AdmTariffEntity, AdmTariffTableEntity, AdmAdditionalRecordEntity, AdmSpecialConditionEntity:
+9.	AdmTariffEntity, AdmTariffTableEntity, AdmAdditionalRecordEntity, AdmSpecialConditionEntity:
+    
     •	Entidades que representam as tarifas, tabelas, registros adicionais e condições especiais;
     •	São mapeadas para o banco de dados e armazenam os detalhes das tarifas.
 
-6.	AdmTariffRepository:
+11.	AdmTariffRepository:
+    
     •	Repositório para acessar as entidades de tarifa no banco de dados.
 
-7.	AdmTariffService:
+13.	AdmTariffService:
+    
     •	Contém a lógica de negócios para criar, listar, buscar e excluir tarifas;
     •	Realiza validações de dados, verifica conflitos e dependências;
     •	Trata exceções, como ValidationException, ConflictException, DependecyException, DataAcessException, para fornecer feedback e respostas apropriadas.
-8.	Exceptions e Tratamento:
+   	
+15.	Exceptions e Tratamento:
+    
     •	ValidationException: Lançada se os dados da tarifa não forem válidos;
     •	ConflictException: Lançada se uma tarifa com critérios semelhantes já existir;
     •	DependecyException: Lançada se a tarifa possui dependências e não pode ser excluída;
