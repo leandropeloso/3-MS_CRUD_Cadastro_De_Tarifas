@@ -1,6 +1,6 @@
 ## MICRO SERVIÇO DE CADASTRO DE TARIFAS ## 
 
-### Este microserviço foi construído para gerenciar informações de tarifas, separadas em módulos regulatórios e contábeis. Cada tarifa contém detalhes sobre tabelas de preços, registros adicionais e condições especiais. O serviço permite criar, listar, buscar por ID e excluir tarifas, com validações de dados, tratamento de exceções e detecção de conflitos e dependências. ### 
+#### Este microserviço foi construído para gerenciar informações de tarifas, separadas em módulos regulatórios e contábeis. Cada tarifa contém detalhes sobre tabelas de preços, registros adicionais e condições especiais. O serviço permite criar, listar, buscar por ID e excluir tarifas, com validações de dados, tratamento de exceções e detecção de conflitos e dependências. ####
 
 Classes e suas funções:
 
@@ -38,4 +38,4 @@ Classes e suas funções:
     •	DependecyException: Lançada se a tarifa possui dependências e não pode ser excluída;
     •	DataAcessException (Spring Data): Tratamento de erros no banco de dados.
 
-Este microserviço oferece controle sobre tarifas, com tratamento de exceções para garantir a integridade dos dados e fornecer respostas adequadas aos clientes que acessam as operações disponíveis. Além disso, ele mantém informações detalhadas sobre tarifas para os módulos regulatórios e contábeis
+#### Este microserviço oferece controle sobre tarifas, com tratamento de exceções para garantir a integridade dos dados e fornecer respostas adequadas aos clientes que acessam as operações disponíveis. Além disso, ele mantém informações detalhadas sobre tarifas para os módulos regulatórios e contábeis #### 
