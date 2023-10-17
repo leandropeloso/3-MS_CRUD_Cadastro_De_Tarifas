@@ -1,20 +1,41 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+MICRO SERVIÇO DE CADASTRO DE TARIFAS
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+Este microserviço foi construído para gerenciar informações de tarifas, separadas em módulos regulatórios e contábeis. Cada tarifa contém detalhes sobre tabelas de preços, registros adicionais e condições especiais. O serviço permite criar, listar, buscar por ID e excluir tarifas, com validações de dados, tratamento de exceções e detecção de conflitos e dependências.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Classes e suas funções:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+1.	AdmTariffConstants:
+•	Classe de constantes que define os módulos regulatórios e contábeis;
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+2.	AdmTariffController:
+•	Controla as solicitações HTTP relacionadas a tarifas;
+•	Oferece endpoints para criar, listar, buscar e excluir tarifas;
+•	Trata conversão de DTO para entidade;
+•	Lida com exceções e retorna respostas HTTP apropriadas.
+
+3.	AdmTariffDTO:
+•	Representa o objeto de transferência de dados (DTO) para tarifas;
+•	Contém informações sobre módulo, data e listas de tabelas, registros adicionais e condições especiais;
+
+4.	AdmTariffTableDTO, AdmAdditionalRecordDTO, AdmSpecialConditionDTO:
+•	DTOs para tabelas, registros adicionais e condições especiais, respectivamente;
+•	Contêm informações relevantes para cada tipo de tarifa.
+
+5.	AdmTariffEntity, AdmTariffTableEntity, AdmAdditionalRecordEntity, AdmSpecialConditionEntity:
+•	Entidades que representam as tarifas, tabelas, registros adicionais e condições especiais;
+•	São mapeadas para o banco de dados e armazenam os detalhes das tarifas.
+
+6.	AdmTariffRepository:
+•	Repositório para acessar as entidades de tarifa no banco de dados.
+
+7.	AdmTariffService:
+•	Contém a lógica de negócios para criar, listar, buscar e excluir tarifas;
+•	Realiza validações de dados, verifica conflitos e dependências;
+•	Trata exceções, como ValidationException, ConflictException, DependecyException, DataAcessException, para fornecer feedback e respostas apropriadas.
+8.	Exceptions e Tratamento:
+•	ValidationException: Lançada se os dados da tarifa não forem válidos;
+•	ConflictException: Lançada se uma tarifa com critérios semelhantes já existir;
+•	DependecyException: Lançada se a tarifa possui dependências e não pode ser excluída;
+•	DataAcessException (Spring Data): Tratamento de erros no banco de dados.
+
+Este microserviço oferece controle sobre tarifas, com tratamento de exceções para garantir a integridade dos dados e fornecer respostas adequadas aos clientes que acessam as operações disponíveis. Além disso, ele mantém informações detalhadas sobre tarifas para os módulos regulatórios e contábeis
